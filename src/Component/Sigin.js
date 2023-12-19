@@ -25,7 +25,6 @@ const Register = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
 
-
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -35,7 +34,6 @@ const Register = () => {
     }
   };
 
-
   const validatePassword = () => {
     if (password.length < 6) {
       setPasswordError('Password must be at least 6 characters');
@@ -44,13 +42,9 @@ const Register = () => {
     }
   };
 
-
   const handleRegister = () => {
-
     validateEmail();
-
     validatePassword();
-
 
     if (!emailError && !passwordError) {
       console.log('Registering user:', { fullName, email, phone, password, confirmPassword });
@@ -64,7 +58,7 @@ const Register = () => {
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: '#e1decf',
-
+        paddingBottom: '78px'
       }}
     >
       <div>
@@ -79,7 +73,7 @@ const Register = () => {
                     <p style={{ fontFamily: 'Alfa Slab One', fontSize: '35px', margin: '0', padding: '0', fontWeight: 'bold', textAlign: 'left' }}>Sign in</p>
                     <p style={{ fontSize: '18px', color: '#969696', textAlign: 'left' }}>Please Login to  Continue your account.</p>
                   </div>
-                  <CForm style={{ textAlign: 'center' }}>
+                  <CForm >
                     <div>
                       <CFormInput
                         type="email"
@@ -89,7 +83,7 @@ const Register = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="E-mail"
                         style={{
-                          width: '350px',
+                          width: '100%',
                           height: '25px',
                           marginBottom: '20px',
                           borderRadius: '10px',
@@ -99,7 +93,6 @@ const Register = () => {
                       />
                       {emailError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{emailError}</p>}
                     </div>
-
                     <div>
                       <CFormInput
                         type="password"
@@ -109,7 +102,7 @@ const Register = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                         style={{
-                          width: '350px',
+                          width: '100%',
                           height: '25px',
                           marginBottom: '20px',
                           borderRadius: '10px',
@@ -119,18 +112,23 @@ const Register = () => {
                       />
                       {passwordError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{passwordError}</p>}
                     </div>
-                    <CFormCheck
-                      style={{ marginLeft: 0, textAlign: 'left' }}
-                      className="mb-3"
-                      label="Keep me logged in"
-                      onChange={(e) => {
-                        console.log(e.target);
-                      }}
-                    />
+                    <div className="mb-3">
+                      <input
+                        type="checkbox"
+                        id="keepLoggedIn"
+                        onChange={(e) => {
+                          console.log(e.target);
+                        }}
+                        style={{ textAlign: 'left', marginBottom: '20px' }}
+                      />
+                      <label htmlFor="keepLoggedIn" style={{ marginLeft: '5px', textAlign: 'left', fontSize: '18px', }}>
+                        Keep me logged in
+                      </label>
+                    </div>
                     <CButton
                       onClick={handleRegister}
                       className="mt-3"
-                      style={{ width: '370px', height: '50px', marginBottom: '20px', backgroundColor: '#8b54ff', color: '#ffffff', borderRadius: '10px', border: 'none' }}
+                      style={{ width: '100%', height: '50px', marginBottom: '20px', backgroundColor: '#3300cc', color: '#ffffff', borderRadius: '10px', border: 'none', fontWeight: 'bold', }}
                     >
                       Sign in
                     </CButton>
@@ -138,13 +136,12 @@ const Register = () => {
                     <CButton
                       onClick={handleRegister}
                       className="mt-3"
-                      style={{ width: '370px', height: '50px', borderRadius: '10px', border: 'none' }}
+                      style={{ width: '100%', height: '50px', borderRadius: '10px', fontWeight: 'bold', fontSize: '16px', backgroundColor: 'transparent', border: '3px solid#f2f2f2', }}
                     >
                       Sign in With Google
                     </CButton>
 
-                    <p >Need an account ? Create one </p>
-
+                    <p style={{ fontSize: '20px', color: '#969696' }}>Need an account? <a style={{ color: '#3300cc', fontWeight: 'bold' }}>Create one</a></p>
                   </CForm>
                 </div>
               </CCardBody>
