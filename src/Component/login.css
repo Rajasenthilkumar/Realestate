@@ -56,7 +56,7 @@
 .container {
     display: flex;
     justify-content: center;
-    background-color: #e1decf;
+    /* background-color: #e1decf; */
     padding-bottom: 140px;
   }
   

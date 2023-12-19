@@ -9,6 +9,8 @@ import {
   CForm,
   CFormInput,
 } from '@coreui/react';
+import backgroundImg from '../assets/images/unsplash_MAnVoJlQUvg.png';
+import logo from '../assets/images/evoltec logo-01 1.svg'
 
 const Register = () => {
   const [fullName, setFullName] = useState('');
@@ -84,21 +86,33 @@ const Register = () => {
       style={{
         display: 'flex',
         justifyContent: 'center',
-        backgroundColor: '#e1decf',
-     
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        minHeight: '1vh',
       }}
     >
       <div>
         <CContainer>
-        <CRow>
-            <p style={{ textAlign: 'center', fontSize: '65px', margin: '0', marginBottom: '0', fontFamily: 'Rammetto One', marginBottom: '0', fontWeight: 'bold' }}>evoltec</p>
-            <p className="text" style={{ textAlign: 'center', marginTop: '0' }}>EVOLVING TECHNOLOGIES</p>
-            <CCard className="p-4" style={{ backgroundColor: '#ffffff', width: '500px', borderRadius: '20px', paddingTop: '50px', paddingBottom: '50px' }}>
+          <CRow>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}>
+              <img
+                src={logo}
+                alt="Evoltec Logo"
+                style={{ width: '200px', height: '200px' }}
+              />
+            </div>
+            <CCard className="p-4" style={{ width: '500px', borderRadius: '20px', paddingTop: '50px', paddingBottom: '50px' }}>
               <CCardBody>
                 <div>
                   <div style={{ marginLeft: '70px' }}>
-                    <p style={{ fontFamily: 'Alfa Slab One', fontSize: '35px', margin: '0', padding: '0', fontWeight: 'bold',textAlign: 'left' }}>Register</p>
-                    <p style={{ fontSize: '18px', color: '#969696',textAlign: 'left' }}>Please register to create your account.</p>
+                    <p style={{ fontFamily: 'Alfa Slab One', fontSize: '35px', margin: '0', padding: '0', fontWeight: 'bold', textAlign: 'left' }}>Register</p>
+                    <p style={{ fontSize: '18px', color: '#969696', textAlign: 'left' }}>Please register to create your account.</p>
                   </div>
                   <CForm style={{ textAlign: 'center' }}>
                     <div>

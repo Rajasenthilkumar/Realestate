@@ -1,3 +1,4 @@
+//signin code for react 19/12/2023
 import React, { useState } from 'react';
 import './login.css';
 import {
@@ -10,6 +11,8 @@ import {
   CFormInput,
   CFormCheck
 } from '@coreui/react';
+import backgroundImg from '../assets/images/unsplash_MAnVoJlQUvg.png';
+import logo from '../assets/images/evoltec logo-01 1.svg'
 
 const Register = () => {
   const [fullName, setFullName] = useState('');
@@ -33,7 +36,6 @@ const Register = () => {
       setEmailError('');
     }
   };
-
   const validatePassword = () => {
     if (password.length < 6) {
       setPasswordError('Password must be at least 6 characters');
@@ -41,7 +43,6 @@ const Register = () => {
       setPasswordError('');
     }
   };
-
   const handleRegister = () => {
     validateEmail();
     validatePassword();
@@ -51,25 +52,36 @@ const Register = () => {
       // Add your registration logic here
     }
   };
-
   return (
     <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        backgroundColor: '#e1decf',
-        paddingBottom: '78px'
-      }}
-    >
-      <div>
-        <CContainer>
-          <CRow>
-            <p style={{ textAlign: 'center', fontSize: '65px', margin: '0', marginBottom: '0', fontFamily: 'Rammetto One', marginBottom: '0', fontWeight: 'bold' }}>evoltec</p>
-            <p className="text" style={{ textAlign: 'center', marginTop: '0' }}>EVOLVING TECHNOLOGIES</p>
-            <CCard className="p-4" style={{ backgroundColor: '#ffffff', width: '500px', borderRadius: '20px', paddingTop: '50px', paddingBottom: '50px' }}>
-              <CCardBody>
-                <div>
-                  <div style={{ marginLeft: '70px' }}>
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      backgroundImage: `url(${backgroundImg})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      minHeight: '1vh',
+    }}
+  >
+    <div>
+      <CContainer>
+        <CRow>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}>
+            <img
+              src={logo}
+              alt="Evoltec Logo"
+              style={{ width: '200px', height: '200px' }}
+            />
+          </div>
+          <CCard className="p-4" style={{ width: '500px', borderRadius: '20px', paddingTop: '50px', paddingBottom: '50px' }}>
+            <CCardBody>
+              <div>
+                <div style={{ marginLeft: '70px' }}>
                     <p style={{ fontFamily: 'Alfa Slab One', fontSize: '35px', margin: '0', padding: '0', fontWeight: 'bold', textAlign: 'left' }}>Sign in</p>
                     <p style={{ fontSize: '18px', color: '#969696', textAlign: 'left' }}>Please Login to  Continue your account.</p>
                   </div>
@@ -83,7 +95,7 @@ const Register = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="E-mail"
                         style={{
-                          width: '100%',
+                          width: '350px',
                           height: '25px',
                           marginBottom: '20px',
                           borderRadius: '10px',
@@ -102,7 +114,7 @@ const Register = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                         style={{
-                          width: '100%',
+                          width: '350px',
                           height: '25px',
                           marginBottom: '20px',
                           borderRadius: '10px',
@@ -119,16 +131,16 @@ const Register = () => {
                         onChange={(e) => {
                           console.log(e.target);
                         }}
-                        style={{ textAlign: 'left', marginBottom: '20px' }}
+                        style={{  textAlign: 'left', marginBottom: '20px' }}
                       />
-                      <label htmlFor="keepLoggedIn" style={{ marginLeft: '5px', textAlign: 'left', fontSize: '18px', }}>
+                      <label htmlFor="keepLoggedIn" style={{ marginRight: '200px', textAlign: 'left', marginBottom: '20px', fontSize: '18px', }}>
                         Keep me logged in
                       </label>
                     </div>
                     <CButton
                       onClick={handleRegister}
                       className="mt-3"
-                      style={{ width: '100%', height: '50px', marginBottom: '20px', backgroundColor: '#3300cc', color: '#ffffff', borderRadius: '10px', border: 'none', fontWeight: 'bold', }}
+                      style={{ width: '370px', height: '50px', marginBottom: '20px', backgroundColor: '#3300cc', color: '#ffffff', borderRadius: '10px', border: 'none', fontWeight: 'bold', }}
                     >
                       Sign in
                     </CButton>
@@ -136,12 +148,12 @@ const Register = () => {
                     <CButton
                       onClick={handleRegister}
                       className="mt-3"
-                      style={{ width: '100%', height: '50px', borderRadius: '10px', fontWeight: 'bold', fontSize: '16px', backgroundColor: 'transparent', border: '3px solid#f2f2f2', }}
+                      style={{ width: '370px', height: '50px', borderRadius: '10px', fontWeight: 'bold', fontSize: '16px',backgroundColor:'transparent' ,border: '3px solid#f2f2f2', }}
                     >
                       Sign in With Google
                     </CButton>
 
-                    <p style={{ fontSize: '20px', color: '#969696' }}>Need an account? <a style={{ color: '#3300cc', fontWeight: 'bold' }}>Create one</a></p>
+                    <p style={{ fontSize: '20px', color: '#969696' }}>Need an account? <a style={{ color: '#3300cc',fontWeight: 'bold' }}>Create one</a></p>
                   </CForm>
                 </div>
               </CCardBody>
