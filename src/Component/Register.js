@@ -126,13 +126,13 @@ const Register = () => {
                         style={{
                           width: '350px',
                           height: '25px',
-                          marginBottom: '20px',
+                          marginBottom: '15px',
                           borderRadius: '10px',
                           border: '2px solid #3300cc',
                           padding: '10px',
                         }}
                       />
-                      {nameError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{nameError}</p>}
+                      {nameError && <p style={{ color: 'red', fontSize: '14px', marginTop: '0' }}>{nameError}</p>}
                     </div>
                     <div>
                       <CFormInput
@@ -145,13 +145,13 @@ const Register = () => {
                         style={{
                           width: '350px',
                           height: '25px',
-                          marginBottom: '20px',
+                          marginBottom: '15px',
                           borderRadius: '10px',
                           border: '2px solid #3300cc',
                           padding: '10px',
                         }}
                       />
-                      {emailError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{emailError}</p>}
+                      {emailError && <p style={{ color: 'red', fontSize: '14px', marginTop: '0' }}>{emailError}</p>}
                     </div>
                     <div>
                       <CFormInput
@@ -164,13 +164,13 @@ const Register = () => {
                         style={{
                           width: '350px',
                           height: '25px',
-                          marginBottom: '20px',
+                          marginBottom: '15px',
                           borderRadius: '10px',
                           border: '2px solid #3300cc',
                           padding: '10px',
                         }}
                       />
-                      {phoneError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{phoneError}</p>}
+                      {phoneError && <p style={{ color: 'red', fontSize: '14px', marginTop: '0' }}>{phoneError}</p>}
                     </div>
                     <div>
                       <CFormInput
@@ -183,13 +183,13 @@ const Register = () => {
                         style={{
                           width: '350px',
                           height: '25px',
-                          marginBottom: '20px',
+                          marginBottom: '15px',
                           borderRadius: '10px',
                           border: '2px solid #3300cc',
                           padding: '10px',
                         }}
                       />
-                      {passwordError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{passwordError}</p>}
+                      {passwordError && <p style={{ color: 'red', fontSize: '14px', marginTop: '0' }}>{passwordError}</p>}
                     </div>
                     <div>
                       <CFormInput
@@ -202,13 +202,13 @@ const Register = () => {
                         style={{
                           width: '350px',
                           height: '25px',
-                          marginBottom: '20px',
+                          marginBottom: '15px',
                           borderRadius: '10px',
                           border: '2px solid #3300cc',
                           padding: '10px',
                         }}
                       />
-                      {confirmPasswordError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{confirmPasswordError}</p>}
+                      {confirmPasswordError && <p style={{ color: 'red', fontSize: '14px', marginTop: '0' }}>{confirmPasswordError}</p>}
                     </div>
                     <CButton
                       onClick={handleRegister}
@@ -222,7 +222,8 @@ const Register = () => {
                       className="mt-3"
                       style={{ width: '370px', height: '50px', backgroundColor: '#3300cc', color: '#ffffff', borderRadius: '10px', border: 'none' }}
                     >
-                      Have an account? Sign in
+                  <a href="/Sigin" style={{ color: '#ffffff', fontWeight: 'bold', textDecoration: 'none' }}>Have an account? Sign in</a>
+                     
                     </CButton>
                   </CForm>
                 </div>
