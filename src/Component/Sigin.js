@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-
+import './login.css';
 import {
   CButton,
   CCard,
   CCardBody,
-  CContainer, // Add this line to import CContainer
-  CRow,      // Add this line to import CRow
+  CContainer,
+  CRow,
   CForm,
-  CFormLabel,
   CFormInput,
+  CFormCheck
 } from '@coreui/react';
 
 const Register = () => {
@@ -18,9 +18,44 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  // State variables for error messages
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+
+
+  const validateEmail = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Invalid email address');
+    } else {
+      setEmailError('');
+    }
+  };
+
+
+  const validatePassword = () => {
+    if (password.length < 6) {
+      setPasswordError('Password must be at least 6 characters');
+    } else {
+      setPasswordError('');
+    }
+  };
+
+
   const handleRegister = () => {
-    // Implement your registration logic and validation here
-    console.log('Registering user:', { fullName, email, phone, password, confirmPassword });
+
+    validateEmail();
+
+    validatePassword();
+
+
+    if (!emailError && !passwordError) {
+      console.log('Registering user:', { fullName, email, phone, password, confirmPassword });
+      // Add your registration logic here
+    }
   };
 
   return (
@@ -28,68 +63,89 @@ const Register = () => {
       style={{
         display: 'flex',
         justifyContent: 'center',
-        // alignItems: 'center',
-       
+        backgroundColor: '#e1decf',
+
       }}
     >
       <div>
-        <CContainer style={{ textAlign:'center'}} >
-          <CRow style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <CCard className="p-4 text-center">
-              <CCardBody>
-                <div>
-                  <h1 className="mb-4">Evoltec</h1>
-                  <p className="text-muted">---EVOLVING TECHNOLOGIES---</p>
-                </div>
-                {/* Rest of your registration form */}
-              </CCardBody>
-            </CCard>
-          </CRow>
+        <CContainer>
           <CRow>
-            <CCard className="p-4" style={{ backgroundColor: '#f0f0f0', padding: '10px', width: '500px' }}>
+            <p style={{ textAlign: 'center', fontSize: '65px', margin: '0', marginBottom: '0', fontFamily: 'Rammetto One', marginBottom: '0', fontWeight: 'bold' }}>evoltec</p>
+            <p className="text" style={{ textAlign: 'center', marginTop: '0' }}>EVOLVING TECHNOLOGIES</p>
+            <CCard className="p-4" style={{ backgroundColor: '#ffffff', width: '500px', borderRadius: '20px', paddingTop: '50px', paddingBottom: '50px' }}>
               <CCardBody>
                 <div>
-                <div style={{ alignItems:'left'}}> 
-                <h2 style={{ alignItems:'left'}}>Register</h2>
-                   <p >Please register to create your account.</p>
-      </div>
-                  <CForm style={{ backgroundColor: '#f0f0f0' }}>
-                   
-                    <div className="mb-3">
+                  <div style={{ marginLeft: '70px' }}>
+                    <p style={{ fontFamily: 'Alfa Slab One', fontSize: '35px', margin: '0', padding: '0', fontWeight: 'bold', textAlign: 'left' }}>Sign in</p>
+                    <p style={{ fontSize: '18px', color: '#969696', textAlign: 'left' }}>Please Login to  Continue your account.</p>
+                  </div>
+                  <CForm style={{ textAlign: 'center' }}>
+                    <div>
                       <CFormInput
                         type="email"
                         id="email"
                         value={email}
+                        onBlur={validateEmail}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="E-mail"
-                        style={{ width: '350px',height:'40px',margin:'15px' }}
+                        style={{
+                          width: '350px',
+                          height: '25px',
+                          marginBottom: '20px',
+                          borderRadius: '10px',
+                          border: '2px solid #3300cc',
+                          padding: '10px',
+                        }}
                       />
+                      {emailError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{emailError}</p>}
                     </div>
-                    
-                    <div className="mb-3">
+
+                    <div>
                       <CFormInput
                         type="password"
                         id="password"
                         value={password}
+                        onBlur={validatePassword}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
-                        style={{ width: '350px',height:'40px',margin:'15px' }}
+                        style={{
+                          width: '350px',
+                          height: '25px',
+                          marginBottom: '20px',
+                          borderRadius: '10px',
+                          border: '2px solid #3300cc',
+                          padding: '10px',
+                        }}
                       />
+                      {passwordError && <p style={{ color: 'red', fontSize: '14px', margin: '0' }}>{passwordError}</p>}
                     </div>
-                
-                    <CButton onClick={handleRegister} color="primary" className="mt-3"   style={{ width: '350px',height:'40px',margin:'15px' }}>
-                      Sign in 
+                    <CFormCheck
+                      style={{ marginLeft: 0, textAlign: 'left' }}
+                      className="mb-3"
+                      label="Keep me logged in"
+                      onChange={(e) => {
+                        console.log(e.target);
+                      }}
+                    />
+                    <CButton
+                      onClick={handleRegister}
+                      className="mt-3"
+                      style={{ width: '370px', height: '50px', marginBottom: '20px', backgroundColor: '#8b54ff', color: '#ffffff', borderRadius: '10px', border: 'none' }}
+                    >
+                      Sign in
                     </CButton>
-                    
-                    <CButton onClick={handleRegister} color="primary" className="mt-3"   style={{ width: '350px',height:'40px',margin:'15px' }}>
-                Sign in With Google
+                    <p className="text1" style={{ textAlign: 'center', marginTop: '0' }}>or</p>
+                    <CButton
+                      onClick={handleRegister}
+                      className="mt-3"
+                      style={{ width: '370px', height: '50px', borderRadius: '10px', border: 'none' }}
+                    >
+                      Sign in With Google
                     </CButton>
-                    <div className="mt-3 text-center">
-                    <p>Need an account? Create one </p>
-                   
-                  </div>
+
+                    <p >Need an account ? Create one </p>
+
                   </CForm>
-              
                 </div>
               </CCardBody>
             </CCard>
