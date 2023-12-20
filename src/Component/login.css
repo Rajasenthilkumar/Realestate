@@ -1,138 +1,137 @@
 
 
-   .text{
-    color: black;
-    position: relative;
-    font-size: 10px;
-  }
-  .text:before {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 1px;
-    background: #CD5C5C;
-    left: 155px;
-    top: 50%;
-    position: absolute;
-  }
-  .text:after {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 1px;
-    background: #CD5C5C;
-    right: 155px;
-    top: 50%;
-    position: absolute;
-  }
-  
-  .text1{
-    color: black;
-    position: relative;
-   
-  }
-  .text1:before {
-    content: "";
-    display: block;
-    width: 170px;   
-    height: 2px;
-    background: #f2f2f2;
-    left: 65px;
-    top: 50%;
-    position: absolute;
-  }
-  .text1:after {
-    content: "";
-    display: block;
-    width: 170px;
-    height: 2px;
-    background: #f2f2f2;
-    right: 65px;
-    top: 50%;
-    position: absolute;
-  }
-  /* Responsive code stars  */
-  /* Default styles for larger screens */
+.text{
+  color: black;
+  position: relative;
+  font-size: 10px;
+}
+.text:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: #CD5C5C;
+  left: 155px;
+  top: 50%;
+  position: absolute;
+}
+.text:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: #CD5C5C;
+  right: 155px;
+  top: 50%;
+  position: absolute;
+}
+
+.text1{
+  color: black;
+  position: relative;
+ 
+}
+.text1:before {
+  content: "";
+  display: block;
+  width: 170px;   
+  height: 2px;
+  background: #f2f2f2;
+  left: 65px;
+  top: 50%;
+  position: absolute;
+}
+.text1:after {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 2px;
+  background: #f2f2f2;
+  right: 65px;
+  top: 50%;
+  position: absolute;
+}
+/* Responsive code stars  */
+/* Default styles for larger screens */
 .container {
-    display: flex;
-    justify-content: center;
-    /* background-color: #e1decf; */
-    padding-bottom: 140px;
+  display: flex;
+  justify-content: center;
+  /* background-color: #e1decf; */
+  padding-bottom: 140px;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 500px;
+  border-radius: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.logo {
+  font-size: 65px;
+  margin: 0;
+  margin-bottom: 0;
+  font-family: 'Rammetto One';
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.text {
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-title {
+  margin-left: 70px;
+  font-family: 'Alfa Slab One';
+  font-size: 35px;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.form-subtitle {
+  font-size: 18px;
+  color: #969696;
+}
+
+.form-input {
+  width: 350px;
+  height: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #3300cc;
+  padding: 10px;
+}
+
+.register-button {
+  width: 370px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 767px) {
+  .container {
+    padding: 20px;
   }
-  
+
   .card {
-    background-color: #ffffff;
-    width: 500px;
-    border-radius: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    width: 100%;
   }
-  
-  .card-body {
-    text-align: center;
-  }
-  
-  .logo {
-    font-size: 65px;
-    margin: 0;
-    margin-bottom: 0;
-    font-family: 'Rammetto One';
-    margin-bottom: 0;
-    font-weight: bold;
-  }
-  
-  .text {
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .form-title {
-    margin-left: 70px;
-    font-family: 'Alfa Slab One';
-    font-size: 35px;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-  }
-  
-  .form-subtitle {
-    font-size: 18px;
-    color: #969696;
-  }
-  
+
   .form-input {
-    width: 350px;
-    height: 25px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 2px solid #3300cc;
-    padding: 10px;
+    width: calc(100% - 40px);
   }
-  
+
   .register-button {
-    width: 370px;
-    height: 50px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: none;
+    width: calc(100% - 40px);
   }
-  
-  /* Styles for smaller screens */
-  @media (max-width: 767px) {
-    .container {
-      padding: 20px;
-    }
-  
-    .card {
-      width: 100%;
-    }
-  
-    .form-input {
-      width: calc(100% - 40px);
-    }
-  
-    .register-button {
-      width: calc(100% - 40px);
-    }
-  }
-  
+}
